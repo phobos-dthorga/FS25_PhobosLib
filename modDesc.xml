@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="107" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
+    <author>phobosgekko</author>
+    <version>0.1.0.0</version>
+    <title>
+        <en>Phobos FS25 Library</en>
+    </title>
+    <description>
+        <en>Shared utility library for Phobos Farming Simulator 25 mods.</en>
+    </description>
+    <iconFilename>icon.dds</iconFilename>
+    <extraSourceFiles>
+        <sourceFile filename="src/PhobosFS25.lua"/>
+        <sourceFile filename="src/Logging.lua"/>
+        <sourceFile filename="src/Mods.lua"/>
+        <sourceFile filename="src/FillTypes.lua"/>
+    </extraSourceFiles>
+</modDesc>
+
