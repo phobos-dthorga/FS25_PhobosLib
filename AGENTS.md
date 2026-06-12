@@ -50,3 +50,23 @@ Poor candidates:
 - Prefer explicit nil-safe return values over hard failures.
 - Log warnings clearly when a requested integration target is missing.
 
+## Performance Gate
+
+Review `docs/performance-targets.md` before adding features or preparing a
+release.
+
+If a hard miss is found, halt new feature development in this repository until
+the target is met again. Allowed work is limited to fixing, measuring,
+documenting, splitting, or removing the cause.
+
+Hard misses include Phobos-owned release-candidate errors or warnings, repeated
+runtime warnings, unbounded per-frame world scans, unbounded save data growth,
+and raw-format warnings for Phobos-owned DDS/icon assets.
+
+## Packaging And Validation
+
+- Run `python tools/package_set.py --validate --write-sha256 --write-json`
+  before proposing a release.
+- Keep root-level package output clean: `docs/`, `tools/`, `.github/`, and
+  repository-only files must not enter the zip.
+- Runtime behavior, save hooks, and log health still require an FS25 launch.

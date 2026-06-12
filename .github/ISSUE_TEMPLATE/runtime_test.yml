@@ -1,0 +1,28 @@
+name: Runtime Test
+description: Record an FS25 launch, save/load, or log-triage result.
+title: "[Runtime]: "
+labels:
+  - runtime-test
+body:
+  - type: textarea
+    id: setup
+    attributes:
+      label: Test Setup
+      description: Map, save, enabled mods, package versions, and what was exercised.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result
+      description: What passed, failed, or needs another run?
+    validations:
+      required: true
+  - type: textarea
+    id: log-lines
+    attributes:
+      label: Relevant Log Lines
+      description: Paste relevant Farming Simulator log lines.
+      render: text
+    validations:
+      required: false

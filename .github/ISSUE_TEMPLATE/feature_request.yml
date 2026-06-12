@@ -17,5 +17,11 @@ body:
       label: Expected Consumer
       description: Which Phobos FS25 mod needs this?
     validations:
-      required: false
-
+      required: true
+  - type: textarea
+    id: admission
+    attributes:
+      label: Shared-Code Admission
+      description: Why does this belong in FS25_PhobosLib rather than one dependent mod?
+    validations:
+      required: true

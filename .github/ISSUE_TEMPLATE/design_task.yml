@@ -1,0 +1,27 @@
+name: Design Task
+description: Track shared-library design or policy work.
+title: "[Design]: "
+labels:
+  - design
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision To Make
+      description: What shared contract, policy, or boundary needs a decision?
+    validations:
+      required: true
+  - type: textarea
+    id: affected-mods
+    attributes:
+      label: Affected Mods
+      description: Which Phobos FS25 mods would consume or be constrained by this?
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Add references, examples, or open questions.
+    validations:
+      required: false

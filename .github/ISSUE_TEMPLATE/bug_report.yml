@@ -16,7 +16,19 @@ body:
     attributes:
       label: Library Version
       description: Which version or commit are you using?
-      placeholder: "0.1.0.0"
+      placeholder: "0.1.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: performance-impact
+    attributes:
+      label: Performance Gate Impact
+      description: Does this look like a target miss that should freeze new feature work?
+      options:
+        - Unknown
+        - No
+        - Soft target miss
+        - Hard target miss
     validations:
       required: true
   - type: textarea
@@ -27,4 +39,3 @@ body:
       render: text
     validations:
       required: false
-
