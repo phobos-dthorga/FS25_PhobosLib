@@ -43,6 +43,19 @@ For manual dispatch, leave the version empty to use `modDesc.xml`, or enter the
 same version to make the intent explicit. The workflow refuses to release when
 the requested version, tag version, and package version disagree.
 
+Manual dispatches should use the hybrid release-note inputs:
+
+- `summary`: one short public-facing summary of the library release.
+- `notes`: extra curated compatibility or dependency context.
+- `testing`: concise validation or runtime test notes.
+- `known_issues`: known warnings, limitations, or required follow-up.
+
+The workflow combines those curated notes with a generated commit changelog
+since the previous `v*` tag, package sizes, SHA256 hashes, and prerelease/stable
+status. If a curated field is omitted, the release still publishes with useful
+generated notes, but `Testing` will say `Not provided.` and `Known Issues` will
+say `None documented.`.
+
 Use `stable` only when the library is genuinely ready to leave pre-release for
 that version. Use `draft` when notes need manual editing before publication.
 
@@ -58,4 +71,5 @@ FS25_PhobosLib_vX.Y.Z.W.zip
 ```
 
 Keep release notes focused on public helper additions, compatibility impact,
-runtime verification, and any known log lines.
+runtime verification, and any known log lines. Do not publish a feature release
+with empty curated notes unless it is a narrow packaging-only correction.
