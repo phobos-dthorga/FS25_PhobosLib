@@ -24,6 +24,31 @@ Use four-part FS25 mod versions: `major.minor.patch.build`.
 - Review `docs/performance-targets.md`; do not release with a known hard miss.
 - If savegame behavior changed, test a disposable save/load cycle.
 
+## Automated Release Workflow
+
+`.github/workflows/release.yml` is the release owner for GitHub releases.
+
+The workflow:
+
+- compiles Python and Lua files;
+- builds the package set from `tools/package_manifest.json` with versioned
+  names;
+- validates package contents;
+- writes `SHA256SUMS.txt` and `package-set.json`;
+- creates or verifies a `vX.Y.Z.W` tag for manual dispatches;
+- publishes all package zips plus release metadata as GitHub release assets;
+- publishes as a prerelease by default.
+
+For manual dispatch, leave the version empty to use `modDesc.xml`, or enter the
+same version to make the intent explicit. The workflow refuses to release when
+the requested version, tag version, and package version disagree.
+
+Use `stable` only when the library is genuinely ready to leave pre-release for
+that version. Use `draft` when notes need manual editing before publication.
+
+`tools/release.ps1` remains a local fallback, but GitHub Actions is the
+preferred release path.
+
 ## Release Assets
 
 The primary release asset should be:
