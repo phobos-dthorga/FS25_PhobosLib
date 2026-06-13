@@ -17,10 +17,17 @@ Current stable helpers:
 - `PhobosFS25.getVersion`
 - `PhobosFS25.Logging.info`, `warn`, `error`
 - `PhobosFS25.Logging.infoSource`, `warnSource`, `errorSource`
+- `PhobosFS25.Logging.infoOnceSource`, `warnOnceSource`, `errorOnceSource`,
+  `resetOnceCache`
+- `PhobosFS25.I18n.get`
 - `PhobosFS25.Mods.isLoaded`, `allLoaded`, `anyLoaded`, `requireLoaded`
 - `PhobosFS25.FillTypes.getIndex`, `getIndexByName`, `exists`,
   `requireIndex`
 - `PhobosFS25.Xml` getter and setter wrappers
+- `PhobosFS25.XmlFile` load/create, getter, setter, iteration, save, and
+  delete wrappers
+- `PhobosFS25.ModSettings.getDirectory`, `ensureDirectory`, `buildPath`,
+  `buildXmlPath`
 - `PhobosFS25.Integrations.withOptionalMod`, `withRequiredMod`, `isAvailable`
 
 ## Provisional
@@ -38,6 +45,10 @@ Current provisional helpers:
 The savegame path helpers are based on observed FS25 mod patterns and the
 current GIANTS LUADOC, but the save hook itself is not part of the public
 library contract yet.
+
+Hook helpers remain a future candidate only after a Phobos consumer proves the
+save/load hook path in a disposable FS25 save without Phobos-owned log warnings
+or save growth.
 
 ## Breaking Changes
 

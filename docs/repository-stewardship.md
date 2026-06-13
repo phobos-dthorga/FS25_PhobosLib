@@ -8,11 +8,15 @@
 - Issue templates and pull request template are present.
 - CI packaging and validation are staged.
 - Performance targets are documented and part of the PR/release gate.
+- `v0.1.2.0` adds shared i18n fallback, once-only logging, mod-settings path,
+  `XMLFile`, and log-triage helpers after Rural Ledger and BgaExtensions both
+  showed matching glue-code needs.
 
 ## Still To Decide
 
 - Local FS25 reference paths for API validation.
 - First runtime dependency-load smoke test, likely with `FS25_PhobosRuralLedger`.
+- Hook helpers after a consuming mod proves a clean disposable-save lifecycle.
 - Branch protection or release workflow once the project has more contributors.
 
 ## License Decision

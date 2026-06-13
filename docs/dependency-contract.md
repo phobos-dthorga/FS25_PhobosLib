@@ -16,9 +16,12 @@ must not assume any other library global exists.
 
 - `PhobosFS25.getName()` and `PhobosFS25.getVersion()`
 - `PhobosFS25.Logging`
+- `PhobosFS25.I18n`
 - `PhobosFS25.Mods`
 - `PhobosFS25.FillTypes`
 - `PhobosFS25.Xml`
+- `PhobosFS25.XmlFile`
+- `PhobosFS25.ModSettings`
 - `PhobosFS25.Savegames`
 - `PhobosFS25.Integrations`
 
@@ -40,3 +43,5 @@ must not assume any other library global exists.
 - Prefer adding a new helper over changing an established helper in place.
 - Do not add save hooks, lifecycle hooks, or FS25 API-sensitive behavior without
   runtime verification in a disposable save.
+- Keep hook installation local to the consuming mod until two consumers need
+  the same proven helper.

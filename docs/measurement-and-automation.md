@@ -18,6 +18,7 @@ CI also performs:
 - package build;
 - package validation;
 - artifact upload.
+- Lua smoke tests for shared helper behavior.
 
 The validator checks required docs, `modDesc.xml`, referenced source files,
 dependency-free library status, expected package entries, and repository-only
@@ -54,7 +55,19 @@ Use the same save and mod set except for the package under test.
 
 ## Log Triage
 
-Search for:
+Run the shared triage helper:
+
+```powershell
+python tools/triage_log.py --summary-json dist/current-log-summary.json
+```
+
+Or fail on Phobos-owned warnings/errors:
+
+```powershell
+python tools/triage_log.py --fail-on-owned-warning
+```
+
+The tool searches for:
 
 - `Error:`
 - `Warning (`
@@ -74,7 +87,8 @@ features continue.
 
 ## Automation Backlog
 
-- Add a shared log-triage helper once two repos need the same parsing rules.
+- Promote hook helper candidates only after a consumer proves the lifecycle in
+  a disposable save.
 - Add measured load-time records to release notes once runtime testing becomes
   regular.
 - Add package-size trend checks if assets become part of the library.

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="107" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
     <author>phobosgekko</author>
-    <version>0.1.1.0</version>
+    <version>0.1.2.0</version>
     <title>
         <en>Phobos FS25 Library</en>
     </title>
@@ -12,10 +12,13 @@
     <extraSourceFiles>
         <sourceFile filename="src/PhobosFS25.lua"/>
         <sourceFile filename="src/Logging.lua"/>
+        <sourceFile filename="src/I18n.lua"/>
         <sourceFile filename="src/Mods.lua"/>
         <sourceFile filename="src/FillTypes.lua"/>
         <sourceFile filename="src/Xml.lua"/>
+        <sourceFile filename="src/XmlFile.lua"/>
         <sourceFile filename="src/Savegames.lua"/>
+        <sourceFile filename="src/ModSettings.lua"/>
         <sourceFile filename="src/Integrations.lua"/>
     </extraSourceFiles>
 </modDesc>

@@ -11,8 +11,12 @@ mod-specific gameplay code.
 ## Intended Scope
 
 - logging helpers
+- once-only logging helpers
+- translation fallback helpers
 - mod and fill type detection helpers
 - XML helper functions
+- XMLFile object helper functions
+- mod-settings path helpers
 - guarded optional-integration helpers
 - provisional savegame path helpers
 - version and compatibility checks
@@ -39,10 +43,15 @@ Lua helpers are exposed through the `PhobosFS25` global namespace.
 ## Public Helper Areas
 
 - `PhobosFS25.Logging` - namespaced log lines and source-scoped warnings.
+- `PhobosFS25.I18n` - nil-safe localized string lookup with formatted
+  fallback text.
 - `PhobosFS25.Mods` - active-mod checks.
 - `PhobosFS25.FillTypes` - nil-safe fill type index lookups.
 - `PhobosFS25.Xml` - nil-safe XML getter/setter wrappers and bounded indexed
   loops.
+- `PhobosFS25.XmlFile` - nil-safe helpers for FS25 `XMLFile` objects.
+- `PhobosFS25.ModSettings` - mod settings directory and settings XML path
+  helpers.
 - `PhobosFS25.Integrations` - guarded optional and required integration calls.
 - `PhobosFS25.Savegames` - provisional savegame path helpers only.
 
@@ -52,6 +61,12 @@ Build and validate the package set with:
 
 ```powershell
 python tools/package_set.py --validate --write-sha256 --write-json
+```
+
+Summarize a local FS25 log with:
+
+```powershell
+python tools/triage_log.py --summary-json dist/current-log-summary.json
 ```
 
 Or build the local zip with:

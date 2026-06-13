@@ -42,3 +42,13 @@ python tools/validate_mod.py
 
 Performs static checks that do not require launching FS25. Runtime behavior,
 save hooks, and performance measurements must still be verified in game.
+
+## Log Triage
+
+```powershell
+python tools/triage_log.py --summary-json dist/current-log-summary.json
+```
+
+Summarizes FS25 `log.txt` into Phobos-owned and external warnings/errors for
+`FS25_PhobosLib`, `FS25_PhobosRuralLedger`, and `FS25_BgaExtensions`. Use
+`--fail-on-owned-warning` for release-candidate gates.
