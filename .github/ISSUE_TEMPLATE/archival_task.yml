@@ -1,0 +1,25 @@
+name: Archival Task
+description: Track retirement-doc, historical-reference, or repository hygiene work.
+title: "[Archive]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository is retired for FS25 runtime use. Use this template for
+        historical reference, documentation, or retirement-maintenance tasks.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What archival or documentation work is needed?
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+      description: Why does this help preserve or clarify the retired repository?
+    validations:
+      required: true

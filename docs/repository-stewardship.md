@@ -11,13 +11,15 @@
 - `v0.1.2.0` adds shared i18n fallback, once-only logging, mod-settings path,
   `XMLFile`, and log-triage helpers after Rural Ledger and BgaExtensions both
   showed matching glue-code needs.
+- Retired for FS25 runtime use after Rural Ledger proved local XML/save
+  fallbacks were more reliable than shared-helper runtime visibility.
+- Release publishing is disabled; keep the repository for history and archived
+  reference only.
 
 ## Still To Decide
 
-- Local FS25 reference paths for API validation.
-- First runtime dependency-load smoke test, likely with `FS25_PhobosRuralLedger`.
-- Hook helpers after a consuming mod proves a clean disposable-save lifecycle.
-- Branch protection or release workflow once the project has more contributors.
+- Whether FS25 ever proves a safer shared-code mechanism. Until then, current
+  Phobos FS25 mods should remain self-contained.
 
 ## License Decision
 

@@ -1,14 +1,18 @@
 # Documentation Index
 
-Use this folder as the shared-library design packet for Phobos FS25 mods.
+Use this folder as the historical shared-library design packet for the retired
+Phobos FS25 helper experiment.
 
 ## Start Here
 
-- `dependency-contract.md` - how dependent mods declare and consume the
-  library.
+- `retirement-notice.md` - current read-only repository posture.
+- `dependency-contract.md` - historical dependency contract and why current
+  FS25 mods should not consume it.
 - `api-stability.md` - compatibility promises for public helpers.
-- `shared-code-admission.md` - when code belongs in the library.
-- `release-version-policy.md` - versioning, packaging, and release rules.
+- `shared-code-admission.md` - historical admission rules and current
+  self-contained replacement direction.
+- `release-version-policy.md` - historical versioning notes and disabled
+  release posture.
 
 ## Runtime And Performance
 

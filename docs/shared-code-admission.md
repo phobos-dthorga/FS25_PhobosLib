@@ -1,7 +1,8 @@
 # Shared-Code Admission
 
-Shared code belongs in `FS25_PhobosLib` only when it lowers real maintenance
-cost across Phobos FS25 mods.
+This repository is retired for FS25 runtime use. Shared FS25 helper patterns
+should be kept local to each consuming mod and documented as copyable
+conventions unless the repository is explicitly un-retired.
 
 ## Good Candidates
 
@@ -40,7 +41,8 @@ cost across Phobos FS25 mods.
 If the answer is uncertain, keep the code local until a second real user
 appears.
 
-`v0.1.2.0` admits i18n, settings-path, XMLFile, and once-only logging helpers
-because Rural Ledger and BgaExtensions both have matching glue code. Save-hook
-helpers remain local to Rural Ledger until the persistence slice proves the
-lifecycle cleanly.
+Historical note: `v0.1.2.0` admitted i18n, settings-path, XMLFile, and
+once-only logging helpers because Rural Ledger and BgaExtensions both had
+matching glue code. Runtime testing later showed the FS25 shared-helper package
+added dependency and visibility friction, so those patterns have moved back to
+self-contained mod-local helpers.

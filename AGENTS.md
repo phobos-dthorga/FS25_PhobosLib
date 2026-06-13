@@ -4,9 +4,11 @@ These notes guide AI/code-agent work in this repository.
 
 ## Purpose
 
-`FS25_PhobosLib` is the shared utility foundation for Phobos Farming Simulator 25 mods.
+`FS25_PhobosLib` is retired for Phobos Farming Simulator 25 runtime use.
 
-Keep it small, boring, stable, and dependency-free wherever possible. Shared code added here becomes a promise to future Phobos mods.
+Keep the repository intact for historical source, docs, and archived reference
+only. Do not add new helpers, do not add new dependent FS25 mods, and do not
+prepare new runtime releases from this repository.
 
 ## FS25 API Rule
 
@@ -14,19 +16,19 @@ Do not guess FS25 Lua APIs from memory. Before adding or changing any FS25 Lua A
 
 If local references are not yet configured for this repository, pause and ask for their location before implementing API-sensitive code.
 
-## Public Namespace
+## Historical Public Namespace
 
-All shared Lua functionality must live under one global namespace:
+Existing historical Lua functionality lives under one global namespace:
 
 ```lua
 PhobosFS25
 ```
 
-Do not create additional globals unless FS25 requires a registered class or specialization name.
+Do not extend this surface unless the repository is explicitly un-retired.
 
 ## Library Boundary
 
-Good candidates:
+Former good candidates, now better kept as local per-mod helpers:
 
 - logging helpers
 - version checks
@@ -45,10 +47,9 @@ Poor candidates:
 
 ## Compatibility
 
-- Keep helper signatures stable once used by another Phobos mod.
-- Add new helpers instead of silently changing old behavior.
-- Prefer explicit nil-safe return values over hard failures.
-- Log warnings clearly when a requested integration target is missing.
+- Current Phobos FS25 mods should be self-contained.
+- Shared FS25 patterns should be documented as copyable conventions.
+- Project Zomboid `PhobosLib` is unaffected.
 
 ## Performance Gate
 
@@ -65,8 +66,8 @@ and raw-format warnings for Phobos-owned DDS/icon assets.
 
 ## Packaging And Validation
 
-- Run `python tools/package_set.py --validate --write-sha256 --write-json`
-  before proposing a release.
+- Do not propose a new FS25 runtime release from this repository.
+- Existing validation commands may still be used for archival checks.
 - Keep root-level package output clean: `docs/`, `tools/`, `.github/`, and
   repository-only files must not enter the zip.
 - Runtime behavior, save hooks, and log health still require an FS25 launch.

@@ -8,9 +8,9 @@
 - [ ] Ran static validation and packaging checks
 - [ ] Checked the Farming Simulator log after launching/testing
 - [ ] Reviewed performance targets; no known hard miss blocks this change
-- [ ] Considered automated release workflow impact
-- [ ] Considered compatibility impact for dependent Phobos FS25 mods
-- [ ] Considered shared API stability and dependency-contract impact
+- [ ] Confirmed this change does not publish or prepare a new FS25 runtime release
+- [ ] Confirmed this change does not add a new dependent FS25 mod
+- [ ] Updated retirement or historical-reference docs if the repository posture changed
 
 ## Notes
 

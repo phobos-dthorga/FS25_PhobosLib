@@ -1,15 +1,16 @@
 # API Stability
 
-`FS25_PhobosLib` should feel boring to consume. Once a helper is used by a
-Phobos FS25 mod, the helper becomes part of the public contract.
+This file records the historical API surface from the retired FS25 helper
+experiment. Current Phobos FS25 mods should not consume this package at
+runtime.
 
 ## Stability Levels
 
 ## Stable
 
-Stable helpers may be used by dependent mods without extra guards beyond normal
-nil-safe use. A stable helper should not change argument order, return shape, or
-side effects during the same major compatibility line.
+Historically stable helpers were intended for dependent mods without extra
+guards beyond normal nil-safe use. Do not add new consumers unless this
+repository is explicitly un-retired.
 
 Current stable helpers:
 
@@ -32,8 +33,8 @@ Current stable helpers:
 
 ## Provisional
 
-Provisional helpers are usable for local experiments but should not be treated
-as final until FS25 runtime verification is recorded.
+Provisional helpers were usable for local experiments but should not be treated
+as final.
 
 Current provisional helpers:
 
@@ -46,14 +47,14 @@ The savegame path helpers are based on observed FS25 mod patterns and the
 current GIANTS LUADOC, but the save hook itself is not part of the public
 library contract yet.
 
-Hook helpers remain a future candidate only after a Phobos consumer proves the
-save/load hook path in a disposable FS25 save without Phobos-owned log warnings
-or save growth.
+Hook helpers remain out of scope for this retired repository. Current FS25 mods
+should keep save/load hook wiring local.
 
 ## Breaking Changes
 
 Breaking changes require:
 
+- explicit un-retirement approval;
 - a documented reason;
 - an affected-mods list;
 - a migration note;

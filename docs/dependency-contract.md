@@ -1,7 +1,11 @@
 # Dependency Contract
 
-`FS25_PhobosLib` is the shared utility foundation for Phobos Farming Simulator
-25 mods. Dependent mods must declare the library in `modDesc.xml`:
+`FS25_PhobosLib` is retired for Phobos Farming Simulator 25 runtime use. This
+file is retained as historical documentation for the original dependency
+contract.
+
+Current Phobos FS25 mods must not declare this library in `modDesc.xml`.
+Historical dependent mods declared:
 
 ```xml
 <dependencies>
@@ -9,8 +13,8 @@
 </dependencies>
 ```
 
-All public helpers live under the global `PhobosFS25` namespace. Dependent mods
-must not assume any other library global exists.
+All public helpers lived under the global `PhobosFS25` namespace. Current FS25
+mods should keep local helper modules instead of relying on this global.
 
 ## Current Public Surface
 
@@ -27,18 +31,20 @@ must not assume any other library global exists.
 
 ## Consumer Rules
 
+- Do not add this dependency to current or future Phobos FS25 mods.
 - Treat helpers as nil-safe utilities, not as gameplay authorities.
 - Keep mod-specific gameplay, balance, and UI code in the consuming mod.
 - Guard optional integrations through `PhobosFS25.Integrations` or equivalent
   active-mod checks.
 - Do not reach into private local functions or rely on file load order beyond
   the source file list in `modDesc.xml`.
-- If a helper is missing, update the library intentionally instead of copying
-  shared logic into multiple mods.
+- If a helper pattern is useful, document it as a copyable convention and keep
+  runtime code local to each FS25 mod.
 
 ## Library Rules
 
 - Remain dependency-free.
+- Remain retired/read-only unless explicitly un-retired.
 - Keep public helper signatures stable once a dependent mod uses them.
 - Prefer adding a new helper over changing an established helper in place.
 - Do not add save hooks, lifecycle hooks, or FS25 API-sensitive behavior without

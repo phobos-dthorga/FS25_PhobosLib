@@ -20,13 +20,12 @@ CI also performs:
 - artifact upload.
 - Lua smoke tests for shared helper behavior.
 
-The validator checks required docs, `modDesc.xml`, referenced source files,
-dependency-free library status, expected package entries, and repository-only
-paths accidentally included in the zip.
+The validator can still be used for archival checks. Do not treat a passing
+package build as approval to publish a new runtime release.
 
 ## Manual Runtime Recipe
 
-For a dependency-load smoke test:
+Historical dependency-load smoke test:
 
 - install `FS25_PhobosLib.zip`;
 - install a tiny dependent test mod or a current Phobos consumer such as
@@ -38,6 +37,9 @@ For a dependency-load smoke test:
 
 For savegame helper stabilization, record the exact save/load result in a
 runtime-test issue or release note.
+
+Current FS25 mods should test their local helper paths without installing this
+package.
 
 ## Load-Time Measurement
 
@@ -55,7 +57,7 @@ Use the same save and mod set except for the package under test.
 
 ## Log Triage
 
-Run the shared triage helper:
+Run the historical triage helper:
 
 ```powershell
 python tools/triage_log.py --summary-json dist/current-log-summary.json
@@ -84,6 +86,9 @@ Classify each Phobos-owned line as:
 
 Known temporary lines should be documented near the affected repo before new
 features continue.
+
+For current Phobos FS25 mods, copy the triage convention locally rather than
+adding a runtime dependency on this package.
 
 ## Automation Backlog
 

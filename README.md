@@ -1,12 +1,16 @@
 # FS25_PhobosLib
 
-Shared Lua utility library for Phobos Farming Simulator 25 mods.
+Retired shared Lua utility-library experiment for Phobos Farming Simulator 25
+mods.
 
 ## Status
 
-Early shared-library foundation. The current goal is to provide a small, stable
-namespace for helpers used by Phobos FS25 mods without turning the library into
-mod-specific gameplay code.
+Retired/read-only for FS25 runtime use. The repository remains intact for
+history and reference, but no new FS25 runtime releases should be published and
+current Phobos FS25 mods should not depend on this package.
+
+Project Zomboid `PhobosLib` is unchanged; this retirement applies only to the
+FS25 shared-library experiment.
 
 ## Intended Scope
 
@@ -30,15 +34,9 @@ mod-specific gameplay code.
 
 ## Usage
 
-Dependent mods should declare:
-
-```xml
-<dependencies>
-    <dependency>FS25_PhobosLib</dependency>
-</dependencies>
-```
-
-Lua helpers are exposed through the `PhobosFS25` global namespace.
+Do not add this package as a dependency for new or current Phobos FS25 mods.
+Use local helper modules in each FS25 mod instead, and document reusable
+patterns as copyable conventions.
 
 ## Public Helper Areas
 
@@ -87,6 +85,7 @@ See `docs/performance-targets.md` and `docs/measurement-and-automation.md`.
 
 Start with:
 
+- `docs/retirement-notice.md`
 - `docs/README.md`
 - `docs/dependency-contract.md`
 - `docs/api-stability.md`
